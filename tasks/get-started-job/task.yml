@@ -8,6 +8,7 @@ image_resource:
 
 inputs:
   - name: create-slot
+  - name: pivotalservices-pynsxv
 
 run:
   path: create-slot/tasks/get-started-job/task.sh
