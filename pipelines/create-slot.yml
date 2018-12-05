@@ -1,0 +1,34 @@
+---
+
+haas_slot_params: &haas_slot_params
+  HAAS_SLOTID: ((haas_slotid))
+  HAAS_ZONE: ((haas_zone))
+  HAAS_SLOT_EDGE_UPLINK: ((haas_slot_edge_uplink))
+  SLOT_EDGE_NAT: ((slot_edge_nat))
+  SLOT_EDGE_PUBLIC_NAT: ((slot_edge_public_nat))
+  SUBNET_1: ((subnet_1))
+  NETMASK_1: ((netmask_1))
+  SIZE_1: ((size_1))
+  GW_1: ((gw_1)
+  VLAN_1: ((vlan_1))
+  DESCRIPTION_1: ((description_1))
+  SUBNET_2: ((subnet_2))
+  NETMASK_2: ((netmask_2))
+  SIZE_2: ((size_2))
+  GW_2: ((gateway_2))
+  VLAN_2: ((vlan_2))
+  DESCRIPTION_2: ((description_2))
+
+resources:
+- name: install-slot
+  type: git
+  source:
+    uri: https://github.com/lamlouis/install-slot
+
+jobs:
+- name: get-started-job
+  max_in_flight: 1
+  plan:
+  - get: install-slot
+  - task: get-started-task
+    file: install-slot/tasks/get-started-job/task.yml
