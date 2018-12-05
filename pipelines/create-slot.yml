@@ -25,6 +25,11 @@ resources:
   source:
     uri: https://github.com/lamlouis/create-slot
 
+- name: pivotalservices-pynsxv
+  type: git
+  source:
+    uri: https://github.com/pivotalservices/pynsxv
+
 jobs:
 - name: get-started-job
   max_in_flight: 1
@@ -32,3 +37,4 @@ jobs:
   - get: create-slot
   - task: get-started-task
     file: create-slot/tasks/get-started-job/task.yml
+
