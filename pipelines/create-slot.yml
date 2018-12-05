@@ -20,15 +20,15 @@ haas_slot_params: &haas_slot_params
   DESCRIPTION_2: ((description_2))
 
 resources:
-- name: install-slot
+- name: create-slot
   type: git
   source:
-    uri: https://github.com/lamlouis/install-slot
+    uri: https://github.com/lamlouis/create-slot
 
 jobs:
 - name: get-started-job
   max_in_flight: 1
   plan:
-  - get: install-slot
+  - get: create-slot
   - task: get-started-task
-    file: install-slot/tasks/get-started-job/task.yml
+    file: create-slot/tasks/get-started-job/task.yml
