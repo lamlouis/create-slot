@@ -6,5 +6,5 @@ RUN yum -y update \
 
 RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm -y 
 
-RUN yum -y install python36u python36u-pip python36u-devel openssl-devel openssl libxml2-devel libxslt-devel libffi-devel
+RUN yum -y install python36u python36u-pip python36u-devel openssl-devel libxml2-devel libxslt-devel libffi-devel
 
