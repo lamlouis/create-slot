@@ -1,5 +1,7 @@
 FROM centos:7
 
+RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+
 RUN yum -y install git curl wget jq  python-pip python-devel openssl-devel libxml2-devel libxslt-devel libffi-devel gcc
 
 RUN pip install pyvmomi tabulate nsxramlclient
